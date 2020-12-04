@@ -1,4 +1,4 @@
-def lets_go(right, down)
+def lets_go(right, down=1)
   trees = []
   File.readlines('input.txt').each do |line|
     row = []
@@ -12,12 +12,12 @@ def lets_go(right, down)
 
   loop do
     x = (x + right) % 31
-    y += 1
+    y += down
     count += 1 if trees[y][x]
-    break if y == trees.length - 1
+    break if y >= trees.length - 1
   end
 
   count
 end
 
-lets_go(1) * lets_go(3) * lets_go(5) * lets_go(7) * lets_go(1) * 
+lets_go(1) * lets_go(3) * lets_go(5) * lets_go(7) * lets_go(1, 2)
