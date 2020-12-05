@@ -8,7 +8,6 @@ def binary_search(seat, high, low)
   else
     binary_search(seat, high, mid)
   end
-
 end
 
 def airline_seats
